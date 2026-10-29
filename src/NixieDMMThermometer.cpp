@@ -13,7 +13,7 @@ const char *CONFIG_AP_NAME = "DVMThermometerConfig";
 const unsigned long CONFIG_PORTAL_TIMEOUT = 30UL * 1000UL;
 
 // Global Variables
-X9C104 pot(Config::DIGIPOT_RESISTANCE_OHMS);
+X9C10X pot(Config::DIGIPOT_RESISTANCE_OHMS);
 unsigned int consecutiveFailures = 0;
 uint8_t currentPosition = 0; // Current position of the potentiometer
 int tempCache = 0;
@@ -128,7 +128,7 @@ String configPage() {
     "<label>SSID <input name=\"ssid\" type=\"text\" value=\"")) +
     escapeHtml(wifiSSID) +
     F("\"></label><br>"
-      "<label>Password <input name=\"password\" type=\"text\" value=\"") +
+      "<label>Password <input name=\"password\" type=\"password\" value=\"") +
     escapeHtml(wifiPassword) +
     F("\"></label><br><button type=\"submit\">Submit</button>"
       "</form></body></html>");
